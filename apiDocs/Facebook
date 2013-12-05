@@ -1,6 +1,6 @@
 Graph API :
 
-file:///autofs/netapp/travail/dafernan/nuitDeLInfo2013/pop-pop/apiDocs/Facebook.html
+https://developers.facebook.com/docs/graph-api/using-graph-api/
 
 
 facebook SDK for JavaScript :
@@ -17,6 +17,9 @@ Page API :
 
 https://developers.facebook.com/docs/graph-api/reference/page/
 
+
+
 User Token :
 
 https://developers.facebook.com/docs/facebook-login/access-tokens/#usertokens
+

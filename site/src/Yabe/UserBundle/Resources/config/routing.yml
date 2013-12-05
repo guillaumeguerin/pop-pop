@@ -1,0 +1,3 @@
+yabe_user_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: YabeUserBundle:Default:index }

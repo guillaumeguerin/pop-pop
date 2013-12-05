@@ -1,0 +1,30 @@
+geoloc:
+    pattern:  /
+    defaults: { _controller: "YabeMainBundle:Geoloc:index" }
+
+geoloc_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "YabeMainBundle:Geoloc:show" }
+
+geoloc_new:
+    pattern:  /new
+    defaults: { _controller: "YabeMainBundle:Geoloc:new" }
+
+geoloc_create:
+    pattern:  /create
+    defaults: { _controller: "YabeMainBundle:Geoloc:create" }
+    requirements: { _method: post }
+
+geoloc_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "YabeMainBundle:Geoloc:edit" }
+
+geoloc_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "YabeMainBundle:Geoloc:update" }
+    requirements: { _method: post|put }
+
+geoloc_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "YabeMainBundle:Geoloc:delete" }
+    requirements: { _method: post|delete }

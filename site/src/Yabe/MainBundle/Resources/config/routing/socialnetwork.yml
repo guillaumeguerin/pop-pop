@@ -1,0 +1,30 @@
+socialnetwork:
+    pattern:  /
+    defaults: { _controller: "YabeMainBundle:SocialNetwork:index" }
+
+socialnetwork_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "YabeMainBundle:SocialNetwork:show" }
+
+socialnetwork_new:
+    pattern:  /new
+    defaults: { _controller: "YabeMainBundle:SocialNetwork:new" }
+
+socialnetwork_create:
+    pattern:  /create
+    defaults: { _controller: "YabeMainBundle:SocialNetwork:create" }
+    requirements: { _method: post }
+
+socialnetwork_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "YabeMainBundle:SocialNetwork:edit" }
+
+socialnetwork_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "YabeMainBundle:SocialNetwork:update" }
+    requirements: { _method: post|put }
+
+socialnetwork_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "YabeMainBundle:SocialNetwork:delete" }
+    requirements: { _method: post|delete }

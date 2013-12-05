@@ -1,3 +1,23 @@
 yabe_main_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: YabeMainBundle:Default:index }
+
+YabeMainBundle_geoloc:
+    resource: "@YabeMainBundle/Resources/config/routing/geoloc.yml"
+    prefix:   /geoloc
+
+YabeMainBundle_socialnetwork:
+    resource: "@YabeMainBundle/Resources/config/routing/socialnetwork.yml"
+    prefix:   /socialnetwork
+
+YabeMainBundle_productinteractions:
+    resource: "@YabeMainBundle/Resources/config/routing/productinteractions.yml"
+    prefix:   /productinteractions
+
+YabeMainBundle_product:
+    resource: "@YabeMainBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+
+YabeMainBundle_category:
+    resource: "@YabeMainBundle/Resources/config/routing/category.yml"
+    prefix:   /category

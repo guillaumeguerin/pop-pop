@@ -1,0 +1,30 @@
+productinteractions:
+    pattern:  /
+    defaults: { _controller: "YabeMainBundle:ProductInteractions:index" }
+
+productinteractions_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "YabeMainBundle:ProductInteractions:show" }
+
+productinteractions_new:
+    pattern:  /new
+    defaults: { _controller: "YabeMainBundle:ProductInteractions:new" }
+
+productinteractions_create:
+    pattern:  /create
+    defaults: { _controller: "YabeMainBundle:ProductInteractions:create" }
+    requirements: { _method: post }
+
+productinteractions_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "YabeMainBundle:ProductInteractions:edit" }
+
+productinteractions_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "YabeMainBundle:ProductInteractions:update" }
+    requirements: { _method: post|put }
+
+productinteractions_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "YabeMainBundle:ProductInteractions:delete" }
+    requirements: { _method: post|delete }

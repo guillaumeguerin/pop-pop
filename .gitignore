@@ -1,0 +1,19 @@
+# Bootstrap
+site/app/bootstrap*
+
+# Symfony directories
+site/bin/*
+site/vendor/*
+site/*/logs/*
+site/*/cache/*
+site/web/uploads/*
+site/web/bundles/*
+
+# Configuration files
+site/app/config/parameters.ini
+site/app/config/parameters.yml
+
+# Others
+site/app/SymfonyRequirements.php
+site/app/check.php
+site/web/config.php

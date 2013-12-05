@@ -1,0 +1,4 @@
+yabe_main:
+    resource: "@YabeMainBundle/Resources/config/routing.yml"
+    prefix:   /
+

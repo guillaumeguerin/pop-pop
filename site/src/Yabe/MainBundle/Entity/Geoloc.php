@@ -96,4 +96,27 @@ class Geoloc
     {
         return $this->date;
     }
+
+    /**
+     * Set user
+     *
+     * @param \Yabe\UserBundle\Entity\User $user
+     * @return Geoloc
+     */
+    public function setUser(\Yabe\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Yabe\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

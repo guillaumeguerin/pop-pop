@@ -103,4 +103,50 @@ class ProductInteractions
     {
         return $this->rating;
     }
+
+    /**
+     * Set user
+     *
+     * @param \Yabe\UserBundle\Entity\User $user
+     * @return ProductInteractions
+     */
+    public function setUser(\Yabe\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Yabe\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Yabe\MainBundle\Entity\Product $product
+     * @return ProductInteractions
+     */
+    public function setProduct(\Yabe\MainBundle\Entity\Product $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Yabe\MainBundle\Entity\Product 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
 }

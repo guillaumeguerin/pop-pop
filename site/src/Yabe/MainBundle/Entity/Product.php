@@ -187,4 +187,44 @@ class Product
     {
         return $this->clicks;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->productInteractions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add productInteractions
+     *
+     * @param \Yabe\MainBundle\Entity\productInteractions $productInteractions
+     * @return Product
+     */
+    public function addProductInteraction(\Yabe\MainBundle\Entity\productInteractions $productInteractions)
+    {
+        $this->productInteractions[] = $productInteractions;
+
+        return $this;
+    }
+
+    /**
+     * Remove productInteractions
+     *
+     * @param \Yabe\MainBundle\Entity\productInteractions $productInteractions
+     */
+    public function removeProductInteraction(\Yabe\MainBundle\Entity\productInteractions $productInteractions)
+    {
+        $this->productInteractions->removeElement($productInteractions);
+    }
+
+    /**
+     * Get productInteractions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProductInteractions()
+    {
+        return $this->productInteractions;
+    }
 }

@@ -2,6 +2,8 @@ parameters:
 #    yabe_user.example.class: Yabe\UserBundle\Example
 
 services:
-#    yabe_user.example:
-#        class: %yabe_user.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    coral_user.registration.form.type:
+        class: Yabe\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: coral_user_registration }

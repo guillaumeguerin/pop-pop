@@ -22,6 +22,22 @@ class User extends BaseUser
      */
     protected $id;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\Geoloc", mappedBy="user")
+     */
+    private $geoloc;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\productInteractions", mappedBy="user")
+     */
+    private $productInteractions;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\socialNetwork", mappedBy="user")
+     */
+    private $socialNetwork;
+
     /**
      * @var string
      *

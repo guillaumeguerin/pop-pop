@@ -1,0 +1,7 @@
+parameters:
+#    yabe_main.example.class: Yabe\MainBundle\Example
+
+services:
+#    yabe_main.example:
+#        class: %yabe_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

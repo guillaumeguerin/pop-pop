@@ -7,3 +7,9 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: yabe_user_registration }
+
+    yabe_user.profile.form.type:
+        class: Yabe\UserBundle\Form\Type\ProfileFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: yabe_user_profile }

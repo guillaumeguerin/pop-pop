@@ -49,6 +49,7 @@ table#ebay {
 	border-left: 1px;
 	border-right: 1px;
 	border-style: solid;
+	box-shadow: 3px 3px 2px #888888;
 }
 
 table#ebay tr {

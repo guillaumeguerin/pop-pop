@@ -23,6 +23,14 @@
             <th>{{ 'profile.show.email'|trans }}</th>
             <td>{{ user.email }}</td>
         </tr>
+        <tr>
+            <th>Phone</th>
+            <td>{{ user.phone }}</td>
+        </tr>
+        <tr>
+            <th>Profile Picture</th>
+            <td>{% if user.profilePicture is not null %}<img src="{{ user.profilePicture }}" width="50px" height="50px" alt="Profile Picture"/>{% endif %}</td>
+        </tr>
     </tbody>
 </table>
 

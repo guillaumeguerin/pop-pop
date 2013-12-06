@@ -18,7 +18,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -39,10 +38,41 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
+
+table#ebay {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	border-color: #000;
+	border-top: 1px;
+	border-bottom: 1px;
+	border-left: 1px;
+	border-right: 1px;
+	border-style: solid;
+}
+
+table#ebay tr {
+	border-color: #000;
+	border-top: 1px;
+	border-bottom: 1px;
+	border-left: 1px;
+	border-right: 1px;
+	border-style: solid;
+}
+
+table#ebay td {
+	padding: 10px;
 	border-collapse: collapse;
 	border-spacing: 0;
+	border-color: #CCC;
+	border-top: 1px;
+	border-bottom: 1px;
+	border-left: 1px;
+	border-right: 1px;
+	border-style: solid;
+	vertical-align: center;
 }
+
 
 /* Body & Global
 -------------------------------------------------------------- */

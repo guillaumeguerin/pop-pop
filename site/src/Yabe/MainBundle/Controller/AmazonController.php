@@ -73,13 +73,13 @@ class AmazonController extends Controller
 		$Timestamp = substr($Timestamp, 0, strlen($Timestamp) - 6);
 		$Operation = "ItemSearch";
 		$Version = "2011-08-01";
-		$ResponseGroup = "ItemAttributes,Offers,Images";
+		$ResponseGroup = "ItemAttributes,Images";
 		//User interface provides values
 		//for $SearchIndex and $Keywords
 
 		//Define the request
 		$request=
-		     "http://webservices.amazon.com/onca/xml"
+		     "http://webservices.amazon.fr/onca/xml"
 		   . "?AWSAccessKeyId=" . Access_Key_ID
 		   . "&AssociateTag=" . Associate_tag
 		   . "&Keywords=" . $Keywords
@@ -106,13 +106,16 @@ class AmazonController extends Controller
 					print("<br><img alt=\"\" src=\"" . $current->MediumImage->URL . "\"/>");
 				}
 				if (isset($current->ItemAttributes->Title)) {
-					print("<br>Title: ".$current->ItemAttributes->Title);
+					print("<br>Title: ". $current->ItemAttributes->Title);
 				}
 				if (isset($current->ItemAttributes->Author)) {
-					print("<br>Author: ".$current->ItemAttributes->Author);
+					print("<br>Author: ". $current->ItemAttributes->Author);
 				}
-				if (isset($current->Offers->Offer->Price->FormattedPrice)) {
-					print("<br>Price:".$current->Offers->Offer->Price->FormattedPrice);
+				if (isset($current->ItemAttributes->ListPrice->FormattedPrice)) {
+					print("<br>Price: ". $current->ItemAttributes->ListPrice->FormattedPrice);
+				}
+				if (isset($current->DetailPageURL)) {
+					print("<br><a target=\"_blank\" href=\"" . $current->DetailPageURL . "\">URL</a>" );
 				}
 			}
 		}

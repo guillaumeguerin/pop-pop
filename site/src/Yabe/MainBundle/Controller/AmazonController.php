@@ -79,7 +79,7 @@ class AmazonController extends Controller
 
 		//Define the request
 		$request=
-		     "http://webservices.amazon.com/onca/xml"
+		     "http://webservices.amazon.fr/onca/xml"
 		   . "?AWSAccessKeyId=" . Access_Key_ID
 		   . "&AssociateTag=" . Associate_tag
 		   . "&Keywords=" . $Keywords

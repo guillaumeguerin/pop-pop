@@ -155,6 +155,7 @@ class User extends BaseUser
         $this->geoloc = new \Doctrine\Common\Collections\ArrayCollection();
         $this->productInteractions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->socialNetwork = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct();
     }
 
     /**

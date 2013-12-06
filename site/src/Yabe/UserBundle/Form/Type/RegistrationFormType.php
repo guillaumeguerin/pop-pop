@@ -14,6 +14,8 @@ class RegistrationFormType extends BaseType
         $builder
             ->add('firstname')
             ->add('lastname')
+	    ->add('phone')
+	    ->add('profilePicture')
             ;
     }
 

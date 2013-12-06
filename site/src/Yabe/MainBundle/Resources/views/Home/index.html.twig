@@ -14,7 +14,27 @@
 
 
 {% block body %}
-	{% include "YabeMainBundle:Home:header.html.twig" %}
+
+
+    <header>
+        <div class="container">
+        	<div class="title">
+            <a href="{{ path('yabe_main_homepage') }}">
+				<div class="hero-titles">
+					<h1><font color = "0076F5">y</font><font color = "F20C1B">a</font><font color = "FFE347">b</font><font color = "59E35B">e</font></h1>
+				</div>
+			</a>
+			</div>
+            <div class="infos">
+                {% include "YabeMainBundle:Home:header/user_infos.html.twig" %}
+
+                {% block notification %}
+                {% endblock %}
+            </div>
+        </div>
+    </header>
+
+
 	<div id="main-container">
 
 		<div id="container">
@@ -23,7 +43,7 @@
 				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
 					connected
-					
+
 				{% else %}
 
 					not connected

@@ -29,6 +29,11 @@ class User extends BaseUser
     private $geoloc;
 
     /**
+     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\Evaluations", mappedBy="user")
+     */
+    private $evaluations;
+
+    /**
      * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\ProductInteractions", mappedBy="user")
      */
     private $productInteractions;
@@ -51,6 +56,34 @@ class User extends BaseUser
      * @ORM\Column(name="lastname", type="string", length=50)
      */
     private $lastname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=30, nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profilePicture", type="string", length=255, nullable=true)
+     */
+    private $profilePicture;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="score", type="float", nullable=true)
+     */
+    private $score;
 
 
     public function __toString()
@@ -221,5 +254,130 @@ class User extends BaseUser
     public function getSocialNetwork()
     {
         return $this->socialNetwork;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return User
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return User
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string 
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set profilePicture
+     *
+     * @param string $profilePicture
+     * @return User
+     */
+    public function setProfilePicture($profilePicture)
+    {
+        $this->profilePicture = $profilePicture;
+
+        return $this;
+    }
+
+    /**
+     * Get profilePicture
+     *
+     * @return string 
+     */
+    public function getProfilePicture()
+    {
+        return $this->profilePicture;
+    }
+
+    /**
+     * Set score
+     *
+     * @param float $score
+     * @return User
+     */
+    public function setScore($score)
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
+    /**
+     * Get score
+     *
+     * @return float 
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Add evaluations
+     *
+     * @param \Yabe\MainBundle\Entity\Evaluations $evaluations
+     * @return User
+     */
+    public function addEvaluation(\Yabe\MainBundle\Entity\Evaluations $evaluations)
+    {
+        $this->evaluations[] = $evaluations;
+
+        return $this;
+    }
+
+    /**
+     * Remove evaluations
+     *
+     * @param \Yabe\MainBundle\Entity\Evaluations $evaluations
+     */
+    public function removeEvaluation(\Yabe\MainBundle\Entity\Evaluations $evaluations)
+    {
+        $this->evaluations->removeElement($evaluations);
+    }
+
+    /**
+     * Get evaluations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEvaluations()
+    {
+        return $this->evaluations;
     }
 }

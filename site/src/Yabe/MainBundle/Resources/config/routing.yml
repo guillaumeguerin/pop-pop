@@ -2,6 +2,10 @@ yabe_main_homepage:
     pattern:  /
     defaults: { _controller: YabeMainBundle:Home:index }
 
+yabe_main_fb:
+    pattern:  /fb
+    defaults: { _controller: YabeMainBundle:Amazon:fb }
+
 
 yabe_main_login:
     pattern:  /login

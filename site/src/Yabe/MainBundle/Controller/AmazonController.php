@@ -125,4 +125,12 @@ class AmazonController extends Controller
 		}
         return $this->render('YabeMainBundle:Home:index.html.twig');
     }
+
+
+    public function fbAction() {
+		if ($request->getMethod() == 'GET') {
+			echo $this->get("request")->request->get("query");
+		}
+        return $this->render('YabeMainBundle:Home:index.html.twig');
+    }
 }

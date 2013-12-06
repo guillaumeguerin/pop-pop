@@ -46,15 +46,10 @@
 					{# connected #}
 
  <div id="fb-root"></div>
-  <script>
-  $(document).ready(function() {
-    console.log("test");
-  });
-  </script>
 
   <script>
    $(document).ready(function() {
-      console.log("document");
+
    window.fbAsyncInit = function() {
    FB.init({
     appId      : '178890425642044',
@@ -78,11 +73,13 @@
       likes = response.data;
       for(x in likes) {
         if(likes[x].category === 'Author' || likes[x].category === 'Book'){
-           page_id = likes[x].id;
+           //page_id = likes[x].id;
+           var page_name = "test";
            page_name = likes[x].name;
-           page_category = likes[x].category;
-           thislike = "page_id : " + page_id + "\npage_name : " + page_name + "\ncategory : " + page_category;
-           console.log(thislike);
+           //page_category = likes[x].category;
+           //thislike = "page_id : " + page_id + "\npage_name : " + page_name + "\ncategory : " + page_category;
+           //console.log(thislike);
+            window.location.href = "{{ path('yabe_main_fb', { 'query': '"+page_name+"' }) }}";
         }
       }
      }, {access_token: token});

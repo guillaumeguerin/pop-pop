@@ -134,6 +134,6 @@ class AmazonController extends Controller
 		if ($request->getMethod() == 'GET') {
 			echo $request->query->get('query');
 		}
-        return $this->render('YabeMainBundle:Home:index.html.twig');
+        return $this->render('YabeMainBundle:Home:index2.html.twig');
     }
 }

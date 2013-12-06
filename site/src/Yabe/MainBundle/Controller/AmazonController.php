@@ -5,10 +5,11 @@ namespace Yabe\MainBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-	define("Access_Key_ID", "AKIAI23C6KZGCUPMLMAQ");
-	define("Associate_tag", "AKIAI23C6KZGCUPMLMAQ");
-	define("Secret_Access_Key_ID", "wNm8jnTM2lS9E9VW3kttSyS4xLvb/4GYzx7JDUOh");
-	define("Request_Signature", "UcGJgxTvNi%2BKJ0Wy34ZT5XUnV35ZqqsnRKXhr8Tryww%3D");
+define("Access_Key_ID", "AKIAI23C6KZGCUPMLMAQ");
+define("Associate_tag", "AKIAI23C6KZGCUPMLMAQ");
+define("Secret_Access_Key_ID", "wNm8jnTM2lS9E9VW3kttSyS4xLvb/4GYzx7JDUOh");
+define("Request_Signature", "UcGJgxTvNi%2BKJ0Wy34ZT5XUnV35ZqqsnRKXhr8Tryww%3D");
+
 class AmazonController extends Controller
 {
 
@@ -87,16 +88,11 @@ class AmazonController extends Controller
 		   . "&Service=AWSECommerceService"
 		   . "&Timestamp=" . $Timestamp
 		   . "&Version=" . $Version;
-		   //. "&Signature=" . Request_Signature;
 		   //. "&ResponseGroup=" . $ResponseGroup;
 
 		$request = $this->signAmazonUrl($request, Secret_Access_Key_ID);
-		//Catch the response in the $response object
-		echo $request;
-		echo "\n\n";
 		$response = file_get_contents($request);
 		$parsed_xml = simplexml_load_string($response);
-		//print_r($parsed_xml);
 		$this->printSearchResults($parsed_xml, $SearchIndex);
 	}
 
@@ -120,9 +116,7 @@ class AmazonController extends Controller
 	}
 
     public function indexAction() {
-    	echo "ECHO";
     	$this->ItemSearch("Books", "harry%20potter");
-    	echo "POO";
         return $this->render('YabeMainBundle:Home:index.html.twig');
     }
 }

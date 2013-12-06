@@ -170,7 +170,7 @@ function _cb_findItemsByKeywords(root) {
   for (var i = 0; i < items.length; ++i) {
 	var item 	= items[i];
 	var categorie = item.primaryCategory[0].categoryId;
-	var inCat = false;
+	var inCat = true;
 	for( var j = 0; j < book_category.length; j++) {
     if(book_category[j] == categorie) {
    	 inCat = true;

@@ -132,7 +132,8 @@ class AmazonController extends Controller
     public function fbAction() {
    		$request = $this->get('request');
 		if ($request->getMethod() == 'GET') {
-			echo $request->query->get('query');
+			$var = $request->query->get('query');
+			$products = $this->ItemSearch("Books", $var);
 		}
         return $this->render('YabeMainBundle:Home:index2.html.twig');
     }

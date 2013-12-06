@@ -116,7 +116,7 @@ class AmazonController extends Controller
 			}
 		}
 		print("</table>");
-		$em->flush();
+		//$em->flush();
 	}
 
     public function indexAction() {

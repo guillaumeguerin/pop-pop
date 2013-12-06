@@ -137,6 +137,8 @@ class AmazonController extends Controller
 			$products = $this->ItemSearch("Books", $var);
 			echo $products;
 		}
-        return $this->render('YabeMainBundle:Home:index2.html.twig');
+        return $this->render('YabeMainBundle:Home:index2.html.twig', array(
+        	'query' => $var,
+    	));
     }
 }

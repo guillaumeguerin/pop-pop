@@ -189,13 +189,11 @@ form button[type=submit]:not(.redButton) {
 	margin: 10px auto;
 	padding: 5px;
 }
-form input[type=submit]:hover,
-form button[type=submit]:not(.redButton):hover {
+form input[type=submit]:hover {
 	cursor:pointer;
 	background-color: #f9f9f9;
 }
-form input[type=submit]:active,
-form button[type=submit]:not(.redButton):active {
+form input[type=submit]:active {
 	border: 1px solid darkgrey;
 }
 form select {
@@ -541,13 +539,13 @@ header div.infos div.text {
     margin-left:85px;
 }
 header div.infos div.text h3 {
-    font-size:12px;
-    line-height:12px;
+    font-size:14px;
+    line-height:14px;
     margin-bottom:6px;
 }
 header div.infos div.text a {
-    font-size:11px;
-    line-height:17px;
+    font-size:13px;
+    line-height:20px;
     display:block;
     color:#56a2dc;
 }
@@ -593,7 +591,7 @@ header div.infos span.notif {
 #header_notif {
     position:absolute;
     width:270px;
-    top:83px;
+    top:103px;
     margin-left:16px;
 }
 #header_notif div.top {
@@ -608,7 +606,7 @@ header div.infos span.notif {
     text-align:center;
 }
 #header_notif ul {
-    width:264px;
+    width:270px;
     border-left:3px solid #1f1f1f;
     border-right:3px solid #1f1f1f;
     background-color: #ebebeb;
@@ -631,11 +629,9 @@ header div.infos span.notif {
 
 /* Container
 -------------------------------------------------------------- */
-#mainContainer {
-	width: 100%;
-	background-color: #ebebeb;
-	border-top: 1px solid #fff;
-	margin-top: -1px;
+#main-container {
+	margin: auto;
+	width: 1000px;
 }
 
 #mainContainer div.container {

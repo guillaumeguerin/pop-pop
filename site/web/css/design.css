@@ -43,7 +43,7 @@ table#ebay {
 	margin-left: auto;
 	margin-right: auto;
 	width: 70%;
-	border-color: #000;
+	border-color: #FFF;
 	border-top: 1px;
 	border-bottom: 1px;
 	border-left: 1px;
@@ -52,11 +52,11 @@ table#ebay {
 }
 
 table#ebay tr {
-	border-color: #000;
 	border-top: 1px;
 	border-bottom: 1px;
 	border-left: 1px;
 	border-right: 1px;
+	border: #E3E5E8;
 	border-style: solid;
 }
 
@@ -64,13 +64,11 @@ table#ebay td {
 	padding: 10px;
 	border-collapse: collapse;
 	border-spacing: 0;
-	border-color: #CCC;
-	border-top: 1px;
-	border-bottom: 1px;
 	border-left: 1px;
 	border-right: 1px;
-	border-style: solid;
 	vertical-align: center;
+	border: #E3E5E8;
+	border-style: solid;
 }
 
 

@@ -98,32 +98,29 @@ class AmazonController extends Controller
 
 	function printSearchResults($parsed_xml, $SearchIndex) {
 		print("<table>");
+		$em = $this->getDoctrine()->getManager();
 		$numOfItems = $parsed_xml->Items->TotalResults;
 		if ($numOfItems > 0) {
 			foreach ($parsed_xml->Items->Item as $current) {
-				print("<td><font size='-1'><b>".$current->ItemAttributes->Title."</b>");
-				if (isset($current->MediumImage->URL)) {
-					print("<br><img alt=\"\" src=\"" . $current->MediumImage->URL . "\"/>");
+				// TODO get Product from URL
+				$product = $em->getRepository("YabeMainBundle:Product")->findByUrl($current->DetailPageURL);
+				if (!$product)
+				{
+				    $product = new Product();
+				    $product->setUrl($current->DetailPageURL);
+				    $product->setClicks(0);
+				    $em->persist($product);
 				}
-				if (isset($current->ItemAttributes->Title)) {
-					print("<br>Title: ". $current->ItemAttributes->Title);
-				}
-				if (isset($current->ItemAttributes->Author)) {
-					print("<br>Author: ". $current->ItemAttributes->Author);
-				}
-				if (isset($current->ItemAttributes->ListPrice->FormattedPrice)) {
-					print("<br>Price: ". $current->ItemAttributes->ListPrice->FormattedPrice);
-				}
-				if (isset($current->DetailPageURL)) {
-					print("<br><a target=\"_blank\" href=\"" . $current->DetailPageURL . "\">URL</a>" );
-				}
+
 			}
 		}
 		print("</table>");
+		$em->flush();
 	}
 
     public function indexAction() {
-    	$this->ItemSearch("Books", "harry%20potter");
+	echo $this->get("request")->getRequest("query");
+    	$products = $this->ItemSearch("Books", $this->get("request")->getRequest("query"));
         return $this->render('YabeMainBundle:Home:index.html.twig');
     }
 }

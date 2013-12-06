@@ -73,7 +73,7 @@ class AmazonController extends Controller
 		$Timestamp = substr($Timestamp, 0, strlen($Timestamp) - 6);
 		$Operation = "ItemSearch";
 		$Version = "2011-08-01";
-		$ResponseGroup = "ItemAttributes,Offers";
+		$ResponseGroup = "ItemAttributes,Offers,Images";
 		//User interface provides values
 		//for $SearchIndex and $Keywords
 
@@ -87,8 +87,8 @@ class AmazonController extends Controller
 		   . "&SearchIndex=" . $SearchIndex
 		   . "&Service=AWSECommerceService"
 		   . "&Timestamp=" . $Timestamp
-		   . "&Version=" . $Version;
-		   //. "&ResponseGroup=" . $ResponseGroup;
+		   . "&Version=" . $Version
+		   . "&ResponseGroup=" . $ResponseGroup;
 
 		$request = $this->signAmazonUrl($request, Secret_Access_Key_ID);
 		$response = file_get_contents($request);
@@ -102,17 +102,21 @@ class AmazonController extends Controller
 		if ($numOfItems > 0) {
 			foreach ($parsed_xml->Items->Item as $current) {
 				print("<td><font size='-1'><b>".$current->ItemAttributes->Title."</b>");
+				if (isset($current->MediumImage->URL)) {
+					print("<br><img alt=\"\" src=\"" . $current->MediumImage->URL . "\"/>");
+				}
 				if (isset($current->ItemAttributes->Title)) {
 					print("<br>Title: ".$current->ItemAttributes->Title);
-				} elseif (isset($current->ItemAttributes->Author)) {
+				}
+				if (isset($current->ItemAttributes->Author)) {
 					print("<br>Author: ".$current->ItemAttributes->Author);
-				} elseif (isset($current->Offers->Offer->Price->FormattedPrice)) {
+				}
+				if (isset($current->Offers->Offer->Price->FormattedPrice)) {
 					print("<br>Price:".$current->Offers->Offer->Price->FormattedPrice);
-				} else {
-					print("<center>No matches found.</center>");
 				}
 			}
 		}
+		print("</table>");
 	}
 
     public function indexAction() {

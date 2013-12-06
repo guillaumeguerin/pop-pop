@@ -6,4 +6,4 @@ services:
         class: Yabe\UserBundle\Form\Type\RegistrationFormType
         arguments: [%fos_user.model.user.class%]
         tags:
-            - { name: form.type, alias: coral_user_registration }
+            - { name: form.type, alias: yabe_user_registration }

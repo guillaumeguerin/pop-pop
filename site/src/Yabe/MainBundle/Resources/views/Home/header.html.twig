@@ -1,0 +1,27 @@
+<header>
+	<div class="header-container">
+		<table>
+			<tr>
+				<td>
+					<a href="{{ path('yabe_main_homepage') }}">
+						<div class="hero-titles">
+							<h1><font color = "0076F5">y</font><font color = "F20C1B">a</font><font color = "FFE347">b</font><font color = "59E35B">e</font></h1>
+						</div>
+					</a>
+				</td>
+				<td>
+					<div class>
+						{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+							{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+							<a href="{{ path('fos_user_security_logout') }}">
+								{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+							</a>
+						{% else %}
+							<a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+						{% endif %}
+					</div>
+				</td>
+			</tr>
+		</table>
+    </div>
+</header>

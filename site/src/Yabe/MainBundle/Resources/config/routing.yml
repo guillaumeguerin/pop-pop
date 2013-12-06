@@ -1,6 +1,6 @@
 yabe_main_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: YabeMainBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: YabeMainBundle:Home:index }
 
 YabeMainBundle_geoloc:
     resource: "@YabeMainBundle/Resources/config/routing/geoloc.yml"

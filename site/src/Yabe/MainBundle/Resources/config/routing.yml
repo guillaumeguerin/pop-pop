@@ -21,3 +21,7 @@ YabeMainBundle_product:
 YabeMainBundle_category:
     resource: "@YabeMainBundle/Resources/config/routing/category.yml"
     prefix:   /category
+
+yabe_main_amazon:
+    pattern:  /amazon
+    defaults: { _controller: YabeMainBundle:Amazon:index }

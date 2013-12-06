@@ -367,28 +367,6 @@ table.cleanTab img, table.projectDetails th, table.projectDetails td {
 }
 
 
-/* Table Sorter
--------------------------------------------------------------- */
-table.tablesorter thead tr .header {
-	background-image: url(./../img/bg.gif);
-	background-repeat: no-repeat;
-	background-position: center right;
-	cursor: pointer;
-}
-table.tablesorter thead tr .headerSortUp {
-	background-image: url(./../img/asc.gif);
-}
-table.tablesorter thead tr .headerSortDown {
-	background-image: url(./../img/desc.gif);
-}
-table.tablesorter th {
-	padding-right:20px;
-}
-table.tablesorter thead tr {
-	background: #2aa7d8;
-	background: linear-gradient(to top, #0e8dbd, #49c4f5);
-}
-
 
 /* Header
 -------------------------------------------------------------- */
@@ -492,7 +470,7 @@ header div.infos form label {
     vertical-align:baseline;
     font-size:medium;
 }
-header div.infos form input {
+header div.infos form input.formInput {
     border: none;
     background-color: transparent;
     height: auto;
@@ -527,10 +505,6 @@ header div.infos table.header_connexion input {
 header div.infos table.header_connexion tr.submit td {
     text-align:center;
     padding-top:1px;
-}
-header div.infos table.header_connexion tr.submit input {
-    margin: auto;
-    height:16px;
 }
 header div.infos table.header_connexion tr.submit input:hover {
     cursor:pointer;

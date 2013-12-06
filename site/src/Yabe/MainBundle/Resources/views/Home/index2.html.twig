@@ -40,11 +40,7 @@
 		<div id="container">
 
 			{% block container %}
-
-				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-					{# connected #}
-
+      
 
  <div id="fb-root"></div>
 
@@ -137,13 +133,11 @@
 
   <fb:login-button show-faces="true" width="200" max-rows="1" perms="user_likes, friends_likes"> ></fb:login-button>
 
-				{% else %}
 
-					{# not connected #}
           <a style="float:right; margin:30px;" class="btn btn-primary" href="{{ asset('yabe.apk') }}">Download Android App</a>
           <div class="clear"></div>
 
-				{% endif %}
+
 
 				<div id="results"></div>
  

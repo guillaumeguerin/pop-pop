@@ -44,14 +44,14 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="clicks", type="integer")
+     * @ORM\Column(name="clicks", type="integer", nullable=true)
      */
     private $clicks;
 

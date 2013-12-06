@@ -119,6 +119,7 @@ class AmazonController extends Controller
 	}
 
     public function indexAction() {
+
     	$request = $this->get('request');
 		if ($request->getMethod() == 'GET') {
 			echo $request->query->get('query');

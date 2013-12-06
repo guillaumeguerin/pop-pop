@@ -119,17 +119,19 @@ class AmazonController extends Controller
 	}
 
     public function indexAction() {
+    	$request = $this->get('request');
 		if ($request->getMethod() == 'GET') {
-	echo $this->get("request")->request->get("query");
-    	$products = $this->ItemSearch("Books", $this->get("request")->request->get("query"));
+			echo $request->query->get('query');
+    		$products = $this->ItemSearch("Books", $this->get("request")->request->get("query"));
 		}
         return $this->render('YabeMainBundle:Home:index.html.twig');
     }
 
 
     public function fbAction() {
+   		$request = $this->get('request');
 		if ($request->getMethod() == 'GET') {
-			echo $this->get("request")->request->get("query");
+			echo $request->query->get('query');
 		}
         return $this->render('YabeMainBundle:Home:index.html.twig');
     }

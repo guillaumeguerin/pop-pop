@@ -796,3 +796,7 @@ footer ul li.third a {
 footer ul li.third a:hover {
 	text-decoration: underline;
 }
+
+._li {
+	margin: 30px;
+}

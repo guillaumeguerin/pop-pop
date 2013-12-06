@@ -23,7 +23,7 @@ class Product
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\productInteractions", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\ProductInteractions", mappedBy="product")
      */
     private $productInteractions;
 

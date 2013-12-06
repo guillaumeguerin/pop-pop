@@ -29,12 +29,12 @@ class User extends BaseUser
     private $geoloc;
 
     /**
-     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\productInteractions", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\ProductInteractions", mappedBy="user")
      */
     private $productInteractions;
 
     /**
-     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\socialNetwork", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Yabe\MainBundle\Entity\SocialNetwork", mappedBy="user")
      */
     private $socialNetwork;
 

@@ -4,6 +4,7 @@ namespace Yabe\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Yabe\MainBundle\Entity\Product;
 
 define("Access_Key_ID", "AKIAI23C6KZGCUPMLMAQ");
 define("Associate_tag", "AKIAI23C6KZGCUPMLMAQ");

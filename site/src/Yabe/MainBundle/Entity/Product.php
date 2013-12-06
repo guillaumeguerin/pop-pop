@@ -37,13 +37,6 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="string", length=30)
-     */
-    private $price;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="url", type="text")
      */
     private $url;
@@ -51,14 +44,14 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="clicks", type="integer")
+     * @ORM\Column(name="clicks", type="integer", nullable=true)
      */
     private $clicks;
 
@@ -94,29 +87,6 @@ class Product
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set price
-     *
-     * @param string $price
-     * @return Product
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * Get price
-     *
-     * @return string 
-     */
-    public function getPrice()
-    {
-        return $this->price;
     }
 
     /**

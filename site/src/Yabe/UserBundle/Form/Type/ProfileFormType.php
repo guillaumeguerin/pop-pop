@@ -3,24 +3,26 @@
 namespace Yabe\UserBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
+use FOS\UserBundle\Form\Type\ProfileFormType as BaseType;
 
-class RegistrationFormType extends BaseType
+class ProfileFormType extends BaseType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
 
         $builder
+            ->remove('username')
             ->add('firstname')
             ->add('lastname')
-	    ->add('phone')
-	    ->add('profilePicture')
+            ->add('phone')
+            ->add('address')
+            ->add('profilePicture')
             ;
     }
 
     public function getName()
     {
-        return 'yabe_user_registration';
+        return 'yabe_user_profile';
     }
 }

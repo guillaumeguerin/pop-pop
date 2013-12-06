@@ -10,12 +10,12 @@
             <table class="header_connexion">
                 <tr>
                     <td><label for="username">Username </label></td>
-                    <td><input tabindex="1" maxlength="30" type="text" id="username" name="_username" value="{{ last_username }}" /></td>
+                    <td><input class="formInput" tabindex="1" maxlength="30" type="text" id="username" name="_username" value="{{ last_username }}" /></td>
                     <td><a href="{{ path('fos_user_registration_register') }}">Register</a></td>
                 </tr>
                 <tr>
                     <td><label for="password">Password</label></td>
-                    <td><input tabindex="2" maxlength="30" type="password" id="password" name="_password" /></td>
+                    <td><input class="formInput" tabindex="2" maxlength="30" type="password" id="password" name="_password" /></td>
                     <td><a href="{{ path('fos_user_resetting_request') }}">Forgotten password</a></td>
                 </tr>
                 {#
@@ -24,7 +24,7 @@
                 #}
                 <tr class="submit">
                     <td></td>
-                    <td><input tabindex="3" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" /></td>
+                    <td><input class="btn btn-primary" tabindex="3" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" /></td>
                     <td></td>
                 </tr>
             </table>

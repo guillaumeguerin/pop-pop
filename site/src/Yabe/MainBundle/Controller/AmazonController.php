@@ -119,8 +119,10 @@ class AmazonController extends Controller
 	}
 
     public function indexAction() {
-	echo $this->get("request")->getRequest("query");
-    	$products = $this->ItemSearch("Books", $this->get("request")->getRequest("query"));
+		if ($request->getMethod() == 'GET') {
+	echo $this->get("request")->request->get("query");
+    	$products = $this->ItemSearch("Books", $this->get("request")->request->get("query"));
+		}
         return $this->render('YabeMainBundle:Home:index.html.twig');
     }
 }
